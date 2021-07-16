@@ -4,7 +4,6 @@ namespace WhatAppTests
 {
     public class TestBase
     {
-
         protected AppManager app = new AppManager();
 
         [OneTimeSetUp]
@@ -14,14 +13,10 @@ namespace WhatAppTests
 
         }
 
-
-
         [OneTimeTearDown]
         public void TearDown()
         {
             app.Stop();
         }
-
-
     }
 }

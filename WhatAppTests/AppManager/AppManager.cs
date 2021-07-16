@@ -1,9 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using System;
-using OpenQA.Selenium.Interactions;
-
 
 namespace WhatAppTests
 {
@@ -11,7 +8,6 @@ namespace WhatAppTests
     {
         public IWebDriver driver;
      
-
         public void Login(User user)
         {
             Type(By.Id("email"), user.GetEmail());
@@ -39,13 +35,9 @@ namespace WhatAppTests
         public void Init()
         {
             driver = new ChromeDriver();
-            
             driver.Manage().Window.Size = new System.Drawing.Size(1351, 856);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-            //string url = "https://gentle-moss-0bbec9003.azurestaticapps.net";
             string url1 = "http://localhost:8080/";
-
             driver.Navigate().GoToUrl(url1);
         }
         public void Stop()
